@@ -1,0 +1,79 @@
+.big-display-card {
+  background-color: white;
+  margin: 10px;
+  border-radius: 12px;
+}
+
+.big-display-card__content {
+  margin: 10px;
+  padding: 20px;
+  border-radius: 12px;
+  background-color: rgba(69, 74, 166, 0.9);
+  z-index: 1;
+  position: relative;
+  top: 0;
+  transition: left 1s;
+  cursor: pointer;
+}
+
+.big-display-card__btn {
+  cursor: pointer;
+  width: 100px;
+  height: 30px;
+  border-radius: 5px;
+  border: none;
+}
+
+.big-display-card__buttons {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 80px;
+  left: 40px;
+  z-index: 0;
+  opacity: 0;
+}
+
+.big-display-card__buttons__remind {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #F7F6F3;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.big-display-card__buttons__text {
+  margin: 0;
+}
+
+.moveToRight {
+  left: 150px;
+  transition: none;
+}
+
+.showButtons {
+  opacity: 1;
+}
+
+.big-display-card__title {
+
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 35px;
+}
+
+.big-display-card__description {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  /* or 150% */
+
+
+  color: #FFFFFF;
+}

@@ -11,7 +11,9 @@
 # production
 /build
 
+# Additional
 /package-lock.json
+.prettierrc
 
 # misc
 .DS_Store
