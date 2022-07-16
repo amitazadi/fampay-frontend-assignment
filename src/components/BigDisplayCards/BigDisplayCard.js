@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import { useEffect, useRef, useState } from 'react'
 import './BigDisplayCards.css'
 
@@ -14,12 +15,11 @@ const BigDisplayCard = (props) => {
 
   const {
     title,
-    description,
     formattedTitle: { text: formattedTitle },
+    description,
     formattedDescription: { text: formattedDescription },
-    bgImage,
     cta,
-
+    bgImage
   } = props
 
   const { text: btnText, text_color: btnTextColor, bg_color: bgColor, url: btnUrl } = cta[0]
@@ -32,8 +32,6 @@ const BigDisplayCard = (props) => {
   const remindLater = () => {
     setCardDetails(null)
   }
-
-  console.log(formattedDescription)
 
   return (
     <>
@@ -63,7 +61,7 @@ const BigDisplayCard = (props) => {
             onClick={handleClickOrKeyPress}
             ref={contentBox}
           >
-            <img className="logo" src={bgImage.image_url} alt="big-card" />
+            <img className="bigcard-image" src={bgImage.image_url} alt="big-card" />
             <h2 className="big-display-card__title">{formattedTitle || title}</h2>
             <p className="big-display-card__description">{formattedDescription || description}</p>
             <a href={btnUrl}>
@@ -84,5 +82,6 @@ const BigDisplayCard = (props) => {
     </>
   )
 }
+
 
 export default BigDisplayCard
