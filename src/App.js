@@ -2,26 +2,26 @@ import { useEffect, useState } from 'react'
 import './index.css'
 import logo from './Images/logo.svg'
 import ShowBigDisplayCards from './components/BigDisplayCards/ShowBigDisplayCards'
-import ShowSmallCardsArrow from './components/SmallCardsArrow/ShowSmallCardsArrow';
-import ShowImageCards from './components/ImageCards/ShowImageCards';
+import ShowSmallCardsArrow from './components/SmallCardsArrow/ShowSmallCardsArrow'
+import ShowImageCards from './components/ImageCards/ShowImageCards'
+import ShowDynamicWidthCards from './components/DynamicWidthCards/ShowDynamicWidthCards'
 
 import filterFetchedData from './utils/filterFetchedData'
 
 function App() {
   const [bigDisplayCards, setBigDisplayCards] = useState()
-  const [smallCardsArrow, setSmallCardsArrow] = useState();
-  const [imageCards, setImageCards] = useState();
-
+  const [smallCardsArrow, setSmallCardsArrow] = useState()
+  const [imageCards, setImageCards] = useState()
+  const [dynamicWidthCards, setDynamicWidthCards] = useState()
 
   // const [boolToRefresh, setBoolToRefresh] = useState(false);
 
   useEffect(() => {
     filterFetchedData().then((data) => {
       setBigDisplayCards(data.bigDisplayCards)
-      setSmallCardsArrow(data.smallCardsArrow);
-      setImageCards(data.imgCards);
-
-
+      setSmallCardsArrow(data.smallCardsArrow)
+      setImageCards(data.imgCards)
+      setDynamicWidthCards(data.dynamicWidthCards)
     })
   }, [])
 
@@ -34,7 +34,7 @@ function App() {
       <ShowBigDisplayCards cardsData={bigDisplayCards} />
       <ShowSmallCardsArrow cardsData={smallCardsArrow} />
       <ShowImageCards cardsData={imageCards} />
-
+      <ShowDynamicWidthCards cardsData={dynamicWidthCards} />
     </div>
   )
 }

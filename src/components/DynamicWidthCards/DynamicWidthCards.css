@@ -1,0 +1,17 @@
+.dynamic-width-cards {
+    display: flex;
+    white-space: nowrap;
+    overflow: auto;
+    margin: 10px;
+  }
+
+  .dynamic-width-cards::-webkit-scrollbar {
+    display: none;
+  }
+
+  @media screen and (min-width: 300px) {
+    .dynamic-width-cards {
+      justify-content: space-between;
+    }
+  }
+  
