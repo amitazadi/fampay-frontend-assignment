@@ -1,0 +1,23 @@
+.small-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    padding: 0 10px;
+    margin: 10px;
+    border-radius: 12px;
+    text-decoration: none;
+  }
+  
+  .small-card__content {
+    display: flex;
+    align-items: center;
+  }
+  
+  .small-card__content__title {
+    margin-left: 10px;
+  }
+  
+  .small-card__arrow {
+    text-decoration: none;
+  }
