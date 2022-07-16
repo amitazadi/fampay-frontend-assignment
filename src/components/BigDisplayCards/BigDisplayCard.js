@@ -8,6 +8,7 @@ const BigDisplayCard = (props) => {
   const contentBox = useRef(null)
   const buttons = useRef(null)
   const [cardDetails, setCardDetails] = useState()
+  const string = ''
 
   useEffect(() => {
     setCardDetails(props)
@@ -19,8 +20,16 @@ const BigDisplayCard = (props) => {
     description,
     formattedDescription: { text: formattedDescription },
     cta,
-    bgImage
+    bgImage,
   } = props
+
+  // console.log(title)
+  // console.log(props.formattedTitle.entities[0].text)
+  // let position=title.search(props.formattedTitle.entities[0].text.toLowerCase());
+  // console.log(position)
+
+  const arr = formattedTitle.split(' ')
+  // console.log(arr)
 
   const { text: btnText, text_color: btnTextColor, bg_color: bgColor, url: btnUrl } = cta[0]
 
@@ -32,6 +41,8 @@ const BigDisplayCard = (props) => {
   const remindLater = () => {
     setCardDetails(null)
   }
+
+  let k = -1
 
   return (
     <>
@@ -61,8 +72,28 @@ const BigDisplayCard = (props) => {
             onClick={handleClickOrKeyPress}
             ref={contentBox}
           >
-            <img className="bigcard-image" src={bgImage.image_url} alt="big-card" />
-            <h2 className="big-display-card__title">{formattedTitle || title}</h2>
+            <img
+              className="bigcard-image"
+              style={{ aspectRatio: bgImage.aspect_ratio }}
+              src={bgImage.image_url}
+              alt="big-card"
+            />
+            <h2 className="big-display-card__title">
+              {arr.map((val, i) => {
+                if (val.includes('{}')) {
+                  k++
+
+                  return (
+                    <span style={{ color: props.formattedTitle.entities[k].color }}>
+                      {' '}
+                      {props.formattedTitle.entities[k].text}{' '}
+                    </span>
+                  )
+                } else {
+                  return val
+                }
+              })}
+            </h2>
             <p className="big-display-card__description">{formattedDescription || description}</p>
             <a href={btnUrl}>
               <button
@@ -82,6 +113,5 @@ const BigDisplayCard = (props) => {
     </>
   )
 }
-
 
 export default BigDisplayCard

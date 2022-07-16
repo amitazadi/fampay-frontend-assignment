@@ -1,0 +1,38 @@
+.small-cards-no-arrow__scrollable,
+.small-cards-no-arrow__non-scrollable {
+    display: flex;
+    padding: 10px;
+}
+
+.small-cards-no-arrow__scrollable {
+    white-space: nowrap;
+    overflow: auto;
+}
+
+.small-cards-no-arrow__scrollable::-webkit-scrollbar {
+    display: none;
+  }
+
+.small-card-no-arrow {
+    display: flex;
+    box-sizing: border-box;
+    align-items: center;
+    margin: 0 10px;
+    background-color: #FBAF03;
+    border-radius: 12px;
+}
+
+.small-card-no-arrow__title {
+    padding: 0 10px;
+    font-size: 0.75rem;
+}
+
+.small-card-no-arrow__img {
+    padding-left: 10px;
+    height: 10px;
+}
+
+.non-scrollable {
+    width: 43vw;
+    margin-right: 3%;
+}

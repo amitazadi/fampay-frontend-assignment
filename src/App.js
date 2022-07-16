@@ -5,6 +5,7 @@ import ShowBigDisplayCards from './components/BigDisplayCards/ShowBigDisplayCard
 import ShowSmallCardsArrow from './components/SmallCardsArrow/ShowSmallCardsArrow'
 import ShowImageCards from './components/ImageCards/ShowImageCards'
 import ShowDynamicWidthCards from './components/DynamicWidthCards/ShowDynamicWidthCards'
+import ShowSmallCardsNoArrow from './components/SmallCardsNoArrow/ShowSmallCardsNoArrow'
 
 import filterFetchedData from './utils/filterFetchedData'
 
@@ -13,6 +14,7 @@ function App() {
   const [smallCardsArrow, setSmallCardsArrow] = useState()
   const [imageCards, setImageCards] = useState()
   const [dynamicWidthCards, setDynamicWidthCards] = useState()
+  const [smallCardsNoArrow, setSmallCardsNoArrow] = useState()
 
   // const [boolToRefresh, setBoolToRefresh] = useState(false);
 
@@ -22,6 +24,7 @@ function App() {
       setSmallCardsArrow(data.smallCardsArrow)
       setImageCards(data.imgCards)
       setDynamicWidthCards(data.dynamicWidthCards)
+      setSmallCardsNoArrow(data.smallCardsNoArrow)
     })
   }, [])
 
@@ -35,6 +38,7 @@ function App() {
       <ShowSmallCardsArrow cardsData={smallCardsArrow} />
       <ShowImageCards cardsData={imageCards} />
       <ShowDynamicWidthCards cardsData={dynamicWidthCards} />
+      <ShowSmallCardsNoArrow cardsData={smallCardsNoArrow} />
     </div>
   )
 }

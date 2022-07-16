@@ -64,10 +64,10 @@
 
 
 .bigcard-image {
+  /* object-fit: cover; */
   width: 91.73px;
   height: 81.2px;
-  left: 53.36px;
-  top: 136.33px;
+  aspect-ratio: auto;
 }
 
 .big-display-card__title {
@@ -76,7 +76,7 @@
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 800;
-  font-size: 35px;
+  font-size: 30px;
 }
 
 .big-display-card__description {

@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import BigDisplayCard from './BigDisplayCard';
 
-const ShowBigDisplayCards = ({ cardsData }) => {
+const ShowBigDisplayCards = ({ cardsData }) => { 
   const [cards, setCards] = useState([]);
 
   useEffect(() => {
