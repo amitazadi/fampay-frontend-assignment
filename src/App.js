@@ -3,12 +3,14 @@ import './index.css'
 import logo from './Images/logo.svg'
 import ShowBigDisplayCards from './components/BigDisplayCards/ShowBigDisplayCards'
 import ShowSmallCardsArrow from './components/SmallCardsArrow/ShowSmallCardsArrow';
+import ShowImageCards from './components/ImageCards/ShowImageCards';
 
 import filterFetchedData from './utils/filterFetchedData'
 
 function App() {
   const [bigDisplayCards, setBigDisplayCards] = useState()
   const [smallCardsArrow, setSmallCardsArrow] = useState();
+  const [imageCards, setImageCards] = useState();
 
 
   // const [boolToRefresh, setBoolToRefresh] = useState(false);
@@ -17,7 +19,9 @@ function App() {
     filterFetchedData().then((data) => {
       setBigDisplayCards(data.bigDisplayCards)
       setSmallCardsArrow(data.smallCardsArrow);
-  
+      setImageCards(data.imgCards);
+
+
     })
   }, [])
 
@@ -29,6 +33,7 @@ function App() {
 
       <ShowBigDisplayCards cardsData={bigDisplayCards} />
       <ShowSmallCardsArrow cardsData={smallCardsArrow} />
+      <ShowImageCards cardsData={imageCards} />
 
     </div>
   )
