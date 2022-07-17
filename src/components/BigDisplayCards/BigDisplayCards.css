@@ -30,8 +30,8 @@
   display: flex;
   flex-direction: column;
   position: absolute;
-  top: 40px;
-  left: 40px;
+  top: 55px;
+  left: 30px;
   z-index: 0;
   opacity: 0;
 
@@ -51,15 +51,21 @@
 
 .big-display-card__buttons__text {
   margin: 0;
+  margin-top: -10px;
+
 }
 
 .big-display-card__buttons__icon {
   color: goldenrod ;
+  font-size: 20px;
+  margin-top: -10px;
+  margin-top: -5px;
+
 }
 
 .moveToRight {
   left: 150px;
-  transition: none;
+  transition: left 1ms;
 }
 
 .showButtons {
@@ -68,7 +74,6 @@
 
 
 .bigcard-image {
-  /* object-fit: cover; */
   width: 91.73px;
   height: 81.2px;
   aspect-ratio: auto;
@@ -81,10 +86,6 @@
   font-style: normal;
   font-weight: 800;
   font-size: 30px;
-  /* display: flex; 
-  flex-wrap: wrap; */
-  /* flex-direction: row; */
-  /* overflow: hidden; */
 }
 
 .big-display-card__description {
@@ -96,7 +97,4 @@
   font-size: 12px;
   line-height: 18px;
   color: #FFFFFF;
-  /* display: flex;
-  flex-wrap: wrap;
-  flex-direction: column; */
 }

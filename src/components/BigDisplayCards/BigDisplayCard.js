@@ -1,9 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import './BigDisplayCards.css'
-import { BsFillBellFill } from 'react-icons/bs';
-import { ImCancelCircle } from 'react-icons/im';
-
-
+import { BsFillBellFill } from 'react-icons/bs'
+import { ImCancelCircle } from 'react-icons/im'
 
 const { PUBLIC_URL } = process.env
 
@@ -64,23 +62,23 @@ const BigDisplayCard = (props) => {
               onKeyPress={remindLater}
               onClick={remindLater}
             >
-              {/* <img alt="remind later" src={`${PUBLIC_URL}/bell.svg`} style={{ height: '20px' }} /> */}
-              <p className="big-display-card__buttons__icon"><BsFillBellFill/></p>
+              <p className="big-display-card__buttons__icon">
+                <BsFillBellFill />
+              </p>
               <p className="big-display-card__buttons__text">remind later</p>
-              {/* <p className="big-display-card__buttons__text">Later</p> */}
             </div>
 
             <div
               className="big-display-card__buttons__remind"
               role="button"
               tabIndex="1"
-              onKeyPress={remindLater}
+              onKeyPress={dismissnow}
               onClick={dismissnow}
             >
-              {/* <img alt="remind later" src={`${PUBLIC_URL}/bell.svg`} style={{ height: '20px' }} /> */}
-              <p className="big-display-card__buttons__icon"><ImCancelCircle/></p>
+              <p className="big-display-card__buttons__icon">
+                <ImCancelCircle />
+              </p>
               <p className="big-display-card__buttons__text">dismiss now</p>
-              {/* <p className="big-display-card__buttons__text">Later</p> */}
             </div>
           </div>
 
