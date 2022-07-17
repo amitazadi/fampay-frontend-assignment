@@ -5,6 +5,7 @@ This is a code repository of the given assignment. I followed all the steps as p
 ## Deployment Link
 
 For deployment, I used Netlify. Here is the link to that.
+
 `https://amitazadi-fampay-frontend-assignment.netlify.app/`
 
 ### Local Setup
