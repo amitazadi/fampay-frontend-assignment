@@ -14,7 +14,7 @@ const ShowDynamicWidthCards = ({ cardsData }) => {
   return (
     <div className="dynamic-width-cards">
       {cards === undefined
-        ? ''
+        ? <h1 style={{}}>Loading...</h1>
         : cards.map((card) => {
             const {
               name,

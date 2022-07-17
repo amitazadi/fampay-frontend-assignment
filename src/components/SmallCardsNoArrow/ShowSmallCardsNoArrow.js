@@ -15,7 +15,7 @@ const ShowSmallCardsNoArrow = ({ cardsData }) => {
     <div className="small-cards-no-arrow">
       <div className="small-cards-no-arrow__scrollable">
         {scrollableCards === undefined
-          ? ''
+          ? <h1 style={{}}>Loading...</h1>
           : scrollableCards.map((card) => {
               const {
                 title,
@@ -36,7 +36,7 @@ const ShowSmallCardsNoArrow = ({ cardsData }) => {
 
       <div className="small-cards-no-arrow__non-scrollable">
         {nonScrollableCards === undefined
-          ? ''
+          ? <h1 style={{}}>Loading...</h1>
           : nonScrollableCards.map((card) => {
               const {
                 title,

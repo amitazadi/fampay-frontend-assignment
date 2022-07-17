@@ -1,6 +1,9 @@
-import PropTypes from 'prop-types'
 import { useEffect, useRef, useState } from 'react'
 import './BigDisplayCards.css'
+import { BsFillBellFill } from 'react-icons/bs';
+import { ImCancelCircle } from 'react-icons/im';
+
+
 
 const { PUBLIC_URL } = process.env
 
@@ -8,7 +11,6 @@ const BigDisplayCard = (props) => {
   const contentBox = useRef(null)
   const buttons = useRef(null)
   const [cardDetails, setCardDetails] = useState()
-  const string = ''
 
   useEffect(() => {
     setCardDetails(props)
@@ -42,6 +44,10 @@ const BigDisplayCard = (props) => {
     setCardDetails(null)
   }
 
+  const dismissnow = () => {
+    setCardDetails(null)
+  }
+
   let k = -1
 
   return (
@@ -58,9 +64,23 @@ const BigDisplayCard = (props) => {
               onKeyPress={remindLater}
               onClick={remindLater}
             >
-              <img alt="remind later" src={`${PUBLIC_URL}/bell.svg`} style={{ height: '20px' }} />
-              <p className="big-display-card__buttons__text">Remind</p>
-              <p className="big-display-card__buttons__text">Later</p>
+              {/* <img alt="remind later" src={`${PUBLIC_URL}/bell.svg`} style={{ height: '20px' }} /> */}
+              <p className="big-display-card__buttons__icon"><BsFillBellFill/></p>
+              <p className="big-display-card__buttons__text">remind later</p>
+              {/* <p className="big-display-card__buttons__text">Later</p> */}
+            </div>
+
+            <div
+              className="big-display-card__buttons__remind"
+              role="button"
+              tabIndex="1"
+              onKeyPress={remindLater}
+              onClick={dismissnow}
+            >
+              {/* <img alt="remind later" src={`${PUBLIC_URL}/bell.svg`} style={{ height: '20px' }} /> */}
+              <p className="big-display-card__buttons__icon"><ImCancelCircle/></p>
+              <p className="big-display-card__buttons__text">dismiss now</p>
+              {/* <p className="big-display-card__buttons__text">Later</p> */}
             </div>
           </div>
 
@@ -80,7 +100,17 @@ const BigDisplayCard = (props) => {
             />
             <h2 className="big-display-card__title">
               {arr.map((val, i) => {
-                if (val.includes('{}')) {
+                if (val.includes('{}!')) {
+                  k++
+
+                  return (
+                    <span style={{ color: props.formattedTitle.entities[k].color }}>
+                      {' '}
+                      {props.formattedTitle.entities[k].text}
+                      {'! '}
+                    </span>
+                  )
+                } else if (val.includes('{}')) {
                   k++
 
                   return (
@@ -90,7 +120,7 @@ const BigDisplayCard = (props) => {
                     </span>
                   )
                 } else {
-                  return val
+                  return <span> {val} </span>
                 }
               })}
             </h2>

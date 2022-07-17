@@ -11,9 +11,9 @@ const ShowBigDisplayCards = ({ cardsData }) => {
   return (
     <div>
       {
-      (cards === undefined) ? <p>Loading...</p>
+      (cards === undefined) ? <h1>Loading...</h1>
         : (
-          cards.map((card) => {
+          cards?.map((card) => {
             const {
               title,
               formatted_title: formattedTitle,

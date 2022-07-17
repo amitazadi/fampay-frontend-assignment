@@ -16,7 +16,7 @@ const ShowImageCards = ({ cardsData }) => {
   return (
     <div className="image-cards-container">
       {cards === undefined
-        ? ''
+        ? <h1 style={{}}>Loading...</h1>
         : cards.map((card) => {
             const {
               url,

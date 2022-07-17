@@ -11,7 +11,7 @@ const ShowSmallCardsArrow = ({ cardsData }) => {
   return (
     <div>
       {cards === undefined ? (
-        <p>Loading...</p>
+        <h1 style={{}}>Loading...</h1>
       ) : (
         cards.map((card) => {
           const { title, formatted_title: formattedTitle, name, icon, url } = card
