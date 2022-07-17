@@ -100,7 +100,7 @@
 }
 
 .big-display-card__description {
-  width: 100%;
+  width: 80%;
   left: 53px;
   font-family: 'Roboto';
   font-style: normal;
@@ -112,7 +112,7 @@
   bottom: 80px;
 }
 
-@media screen and (min-width: 200px) and (max-width: 500px) {
+@media screen and (min-width: 300px) and (max-width: 500px) {
   .big-display-card__title {
     top: 90px;
   }
@@ -123,5 +123,24 @@
 
   .big-display-card__btn {
     bottom: 20px;
+  }
+}
+
+@media screen and (min-width: 250px) and (max-width: 500px) {
+  .big-display-card__title {
+    top: 90px;
+    left:35px;
+  }
+
+  .big-display-card__description {
+    bottom: 50px;
+    left:35px;
+
+  }
+
+  .big-display-card__btn {
+    bottom: 20px;
+    left:35px;
+
   }
 }
