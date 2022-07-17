@@ -13,16 +13,18 @@ const ShowDynamicWidthCards = ({ cardsData }) => {
 
   return (
     <div className="dynamic-width-cards">
-      {cards === undefined
-        ? <h1 style={{}}>Loading...</h1>
-        : cards.map((card) => {
-            const {
-              name,
-              url,
-              bg_image: { image_url: imageUrl },
-            } = card
-            return <DynamicWidthCard key={name} url={url} imageUrl={imageUrl} height={height} />
-          })}
+      {cards === undefined ? (
+        <h1 style={{}}>Loading...</h1>
+      ) : (
+        cards.map((card) => {
+          const {
+            name,
+            url,
+            bg_image: { image_url: imageUrl },
+          } = card
+          return <DynamicWidthCard key={name} url={url} imageUrl={imageUrl} height={height} />
+        })
+      )}
     </div>
   )
 }

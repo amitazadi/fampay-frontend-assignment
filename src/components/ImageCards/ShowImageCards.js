@@ -15,16 +15,18 @@ const ShowImageCards = ({ cardsData }) => {
 
   return (
     <div className="image-cards-container">
-      {cards === undefined
-        ? <h1 style={{}}>Loading...</h1>
-        : cards.map((card) => {
-            const {
-              url,
-              name,
-              bg_image: { image_url: bgImageUrl },
-            } = card
-            return <ImageCard url={url} key={name} bgImageUrl={bgImageUrl} />
-          })}
+      {cards === undefined ? (
+        <h1 style={{}}>Loading...</h1>
+      ) : (
+        cards.map((card) => {
+          const {
+            url,
+            name,
+            bg_image: { image_url: bgImageUrl },
+          } = card
+          return <ImageCard url={url} key={name} bgImageUrl={bgImageUrl} />
+        })
+      )}
     </div>
   )
 }

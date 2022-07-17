@@ -3,8 +3,6 @@ import './BigDisplayCards.css'
 import { BsFillBellFill } from 'react-icons/bs'
 import { ImCancelCircle } from 'react-icons/im'
 
-const { PUBLIC_URL } = process.env
-
 const BigDisplayCard = (props) => {
   const contentBox = useRef(null)
   const buttons = useRef(null)
@@ -90,12 +88,8 @@ const BigDisplayCard = (props) => {
             onClick={handleClickOrKeyPress}
             ref={contentBox}
           >
-            <img
-              className="bigcard-image"
-              style={{ aspectRatio: bgImage.aspect_ratio }}
-              src={bgImage.image_url}
-              alt="big-card"
-            />
+            <img className="bigcard-image" src={bgImage.image_url} alt="big-card" />
+
             <h2 className="big-display-card__title">
               {arr.map((val, i) => {
                 if (val.includes('{}!')) {
