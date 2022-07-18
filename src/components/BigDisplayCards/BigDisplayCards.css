@@ -5,9 +5,7 @@
   position: relative;
   overflow: hidden;
   display: flex;
-  width: 100%;
   height: 300px;
-
 }
 
 .big-display-card__content {
@@ -85,7 +83,6 @@
   width: 100%;
   border-radius: 12px;
   height: 100%;
-
 }
 
 .big-display-card__title {
